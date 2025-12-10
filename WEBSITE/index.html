@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tari Saman — IndieCulture</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">IndieCulture</div>
+    <div class="controls">
+      <button id="themeToggle" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      <button id="openAbout" aria-controls="panel" aria-expanded="false">ℹ️ Tentang</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <h1>Tari Saman</h1>
+        <p class="tagline">Warisan budaya Aceh — "Tari Seribu Tangan" (UNESCO Intangible Cultural Heritage)</p>
+        <div class="cta-row">
+          <button id="learnBtn">Pelajari</button>
+          <button id="quizBtn">Mulai Quiz</button>
+        </div>
+      </div>
+      <div class="hero-art">
+        <!-- simple decorative SVG -->
+        <svg viewBox="0 0 200 200" aria-hidden="true" class="hero-svg">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1">
+              <stop offset="0" stop-color="#ff4d6d"/>
+              <stop offset="1" stop-color="#ff9a3d"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="70" fill="url(#g)" opacity="0.12"></circle>
+          <g transform="translate(30,40)" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round">
+            <path d="M10 60 C30 10, 80 10, 100 60"></path>
+            <path d="M10 80 C30 35, 80 35, 100 80"></path>
+          </g>
+        </svg>
+      </div>
+    </section>
+
+    <section class="summary" id="summary">
+      <h2>Sekilas Tari Saman</h2>
+      <p>Tari Saman berasal dari suku Gayo (Aceh). Menonjol dengan gerakan tepuk tangan, hentakan dada, dan vokal kolektif. Biasanya ditampilkan oleh kelompok pria duduk berbaris, menunjukkan kekompakan dan disiplin.</p>
+
+      <div class="facts">
+        <article>
+          <strong>Asal</strong>
+          <p>Aceh (Suku Gayo)</p>
+        </article>
+        <article>
+          <strong>UNESCO</strong>
+          <p>Terdaftar sebagai Warisan Budaya Takbenda (2011)</p>
+        </article>
+        <article>
+          <strong>Ciri</strong>
+          <p>Gerakan kompak, tempo cepat, tanpa alat musik</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="timeline" aria-label="Timeline tari saman">
+      <h2>Timeline & Prosesi</h2>
+      <ol>
+        <li><span class="t-title">Persiapan</span><span class="t-desc">Latihan gerak, pengucapan syair</span></li>
+        <li><span class="t-title">Pembukaan</span><span class="t-desc">Salam, pembacaan syair</span></li>
+        <li><span class="t-title">Inti</span><span class="t-desc">Gerakan cepat dan kompak; vokal kolektif</span></li>
+        <li><span class="t-title">Penutup</span><span class="t-desc">Ucapan terima kasih, salam</span></li>
+      </ol>
+    </section>
+
+    <section class="gallery" aria-label="Galeri singkat">
+      <h2>Elemen Budaya</h2>
+      <div class="grid">
+        <div class="card-icon">
+          <div class="emoji">🤝</div>
+          <h3>Kekompakan</h3>
+          <p>Gerakan serempak menonjolkan kebersamaan.</p>
+        </div>
+
+        <div class="card-icon">
+          <div class="emoji">🗣️</div>
+          <h3>Syair</h3>
+          <p>Syair berisi nasihat, doa, dan sejarah lokal.</p>
+        </div>
+
+        <div class="card-icon">
+          <div class="emoji">🪘</div>
+          <h3>Tanpa Musik</h3>
+          <p>Hanya suara tubuh dan vokal, bukan instrumen.</p>
+        </div>
+
+        <div class="card-icon">
+          <div class="emoji">🏛️</div>
+          <h3>Ritual</h3>
+          <p>Terkadang dipakai pada acara adat dan seremonial.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz" aria-hidden="true">
+      <h2>Quiz Singkat — Cek Pemahamanmu</h2>
+      <div id="quizContainer">
+        <!-- JS akan memasukkan pertanyaan di sini -->
+      </div>
+      <div class="quiz-actions">
+        <button id="startQuiz">Mulai Quiz</button>
+        <button id="submitQuiz" disabled>Submit Jawaban</button>
+        <div id="quizResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="resources">
+      <h2>Referensi & Catatan</h2>
+      <ul>
+        <li>UNESCO — Telegram of Intangible Cultural Heritage (2011)</li>
+        <li>Sumber akademik lokal dan dokumentasi seni tradisi Aceh</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Slide-in panel (About / detail) -->
+  <aside id="panel" class="panel" role="dialog" aria-hidden="true" aria-labelledby="panelTitle">
+    <button id="closePanel" class="close" aria-label="Tutup panel">✕</button>
+    <h3 id="panelTitle">Tentang Situs</h3>
+    <p>Website ini dibuat untuk tugas sekolah — memperkenalkan Tari Saman dengan gaya modern, interaktif, dan mudah dipahami.</p>
+    <h4>Manfaat</h4>
+    <ul>
+      <li>Belajar sejarah singkat</li>
+      <li>Memahami nilai budaya</li>
+      <li>Menguji pemahaman lewat quiz</li>
+    </ul>
+  </aside>
+
+  <footer class="footer">
+    <small>© 2025 IndieCulture • Sumber: ringkasan publik</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
